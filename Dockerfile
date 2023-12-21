@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:16.4.2
+FROM node:20-alpine
 
 LABEL maintainer "mersocarlin@mersocarlin.com"
 
