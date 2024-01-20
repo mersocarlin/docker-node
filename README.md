@@ -4,7 +4,7 @@ Base docker image for all of my NodeJS apps.
 
 ## 📖 How to
 
-In `Dockerfile`: 
+In `Dockerfile`:
 
 ```
 FROM mersocarlin/docker-node
@@ -27,4 +27,14 @@ COPY . /app/
 EXPOSE 3001
 
 CMD [ "yarn", "test" ]
+```
+
+## Publishing a new version to Docker registry
+
+```bash
+docker build -t mersocarlin/docker-node:20-alpine
+git tag v20-alpine
+docker tag mersocarlin/docker-node:20-alpine mersocarlin/docker-node:latest
+docker push mersocarlin/docker-node:latest
+git push origin --tags
 ```
